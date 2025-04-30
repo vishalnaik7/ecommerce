@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 
 <!-- Added by HTTrack -->
@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="vendors/fonts/butler/stylesheet.min.css">
     <link rel="stylesheet" href="vendors/fonts/a-antara-distance/stylesheet.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="css/themes.css"> 
+    <link rel="stylesheet" href="css/themes.css">
 </head>
 
 <body>
-    <header class="main-header navbar-light header-sticky header-sticky-smart"> 
+    <header class="main-header navbar-light header-sticky header-sticky-smart">
         <div class="sticky-area bg-white">
             <div class="container container-xxl">
                 <nav class="navbar navbar-expand-xl px-0 d-block">
@@ -42,7 +42,7 @@
                                 <div
                                     class="d-flex mt-3 mt-xl-0 align-items-center w-100 justify-content-start ml-xxl-12">
                                     <a class="navbar-brand mw-184px d-inline-block py-0" href="index.html">
-                                    Ecommerce
+                                        Ecommerce
                                     </a>
                                 </div>
                             </div>
@@ -73,13 +73,13 @@
 
                                     </li>
                                     <li aria-haspopup="true" aria-expanded="false"
-                                        class="nav-item  dropdown py-2 py-xl-7 sticky-py-xl-6 px-0 px-xl-4">
-                                        <a class="nav-link p-0" href="contact-us.html">
-                                            Contact
+                                        class="nav-item dropdown py-2 py-xl-7 sticky-py-xl-6 px-0 px-xl-4">
+                                        <a class="nav-link p-0" href="{{ url('/orders') }}">
+                                            All Orders
                                             <span class="caret"></span>
                                         </a>
-
                                     </li>
+
                                     <li aria-haspopup="true" aria-expanded="false"
                                         class="nav-item dropdown-item-blog dropdown py-2 py-xl-7 sticky-py-xl-6 px-0 px-xl-4">
                                         <a class="nav-link dropdown-toggle p-0" href="#" data-toggle="dropdown">
@@ -209,51 +209,15 @@
                                     </a>
                                     <ul
                                         class="navbar-nav flex-row justify-content-xl-end d-flex flex-wrap text-body py-0 navbar-right">
-                                        <li aria-haspopup="true" aria-expanded="false"
-                                            class="nav-item dropdown-item-home dropdown">
-                                            <a class="nav-link dropdown-toggle p-0" href="http://127.0.0.1:8000/"
-                                                data-toggle="dropdown">
-                                                Login
-                                                <span class="caret"></span>
-                                            </a>
-                                            <div class="dropdown-menu x-animated x-fadeInUp pt-3 pb-0 pb-xl-3 mw-260px">
-                                                <div class="row px-7">
-                                                    <div class="col-6">
-                                                        <ul class="p-0">
-                                                            <li class="dropdown-item px-0">
-                                                                <a class="dropdown-link" href="">
-                                                                    <svg class="icon icon-user-light mr-2">
-                                                                        <use xlink:href="#icon-user-light"></use>
-                                                                    </svg>
-                                                                    <span> Profile </span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-item px-0">
-                                                                <a class="dropdown-link" href="">
-                                                                    <i class="fa fa-sign-out mr-2"></i> <span>
-                                                                        Logout</span>
-                                                                </a>
-                                                            </li>
 
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+
                                         <li class="nav-item">
-                                            <a class="nav-link pr-3 py-0" href="http://127.0.0.1:8000/cart" data-toggle="modal"
-                                                data-target="#sign-in">
-                                                <svg class="icon icon-user-light">
-                                                    <use xlink:href="#icon-user-light"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link position-relative px-4 py-0" href="http://127.0.0.1:8000/cart">
+                                            <a class="nav-link position-relative px-4 py-0"
+                                                href="http://127.0.0.1:8000/cart">
                                                 <svg class="icon icon-heart">
                                                     <use xlink:href="#icon-heart"></use>
-                                                </svg> 
-                                        </li> 
+                                                </svg>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -280,7 +244,7 @@
             </div>
         </div>
     </header>
-    @yield('content') 
+    @yield('content')
     <script src="vendors/jquery.min.js"></script>
     <script src="vendors/jquery-ui/jquery-ui.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.bundle.js"></script>
@@ -296,70 +260,82 @@
     <script src="vendors/chartjs/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="js/theme.js"></script>  
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script>
- $(document).ready(function() { 
-    // Increase Quantity
-    $('.btn-increase').click(function() { 
-        let id = $(this).data('id');
-        let input = $('.quantity-input[data-id="' + id + '"]');
-        let quantity = parseInt(input.val()) + 1;
-        updateQuantity(id, quantity);
-    });
-
-    // Decrease Quantity
-    $('.btn-decrease').click(function() { 
-        let id = $(this).data('id');
-        let input = $('.quantity-input[data-id="' + id + '"]');
-        let quantity = parseInt(input.val()) - 1;
-        if (quantity > 0) {
+    <script src="js/theme.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+        // Increase Quantity
+        $('.btn-increase').click(function() {
+            let id = $(this).data('id');
+            let input = $('.quantity-input[data-id="' + id + '"]');
+            let quantity = parseInt(input.val()) + 1;
             updateQuantity(id, quantity);
+        });
+
+        // Decrease Quantity
+        $('.btn-decrease').click(function() {
+            let id = $(this).data('id');
+            let input = $('.quantity-input[data-id="' + id + '"]');
+            let quantity = parseInt(input.val()) - 1;
+            if (quantity > 0) {
+                updateQuantity(id, quantity);
+            }
+        });
+
+        // Update Quantity Ajax
+        function updateQuantity(id, quantity) {
+            $.ajax({
+                url: '{{ route("cart.updateQuantity") }}',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    cart_id: id,
+                    quantity: quantity
+                },
+                success: function(response) {
+                    if (response.success) {
+                        // Update the quantity input value
+                        $('.quantity-input[data-id="' + id + '"]').val(quantity);
+
+                        // Update the total price for this product
+                        $('#total-' + id).text('$' + parseFloat(response.total_price).toFixed(2));
+
+                        // Optionally, update the overall cart total if needed
+                        $('#cart-total').text('$' + parseFloat(response.cart_total).toFixed(2));
+                    }
+                }
+            });
         }
     });
+    $(document).on('click', '.btn-remove', function() {
+        let id = $(this).data('id');
 
-    // Update Quantity Ajax
-    function updateQuantity(id, quantity) {
         $.ajax({
-            url: '{{ route("cart.updateQuantity") }}',
+            url: '{{ route("cart.remove") }}',
             method: 'POST',
             data: {
                 _token: '{{ csrf_token() }}',
-                cart_id: id,
-                quantity: quantity
+                cart_id: id
             },
             success: function(response) {
                 if (response.success) {
-                    // Update the quantity input value
-                    $('.quantity-input[data-id="' + id + '"]').val(quantity);
-                    
-                    // Update the total price for this product
-                    $('#total-' + id).text('$' + parseFloat(response.total_price).toFixed(2));
-
-                    // Optionally, update the overall cart total if needed
-                    $('#cart-total').text('$' + parseFloat(response.cart_total).toFixed(2));
+                    localStorage.setItem('cartSuccessMessage', response.message);
+                    location.reload();
+                } else {
+                    Toastify({
+                        text: response.message,
+                        duration: 3000,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "#F44336",
+                    }).showToast();
                 }
-            }
-        });
-    } 
-}); 
-$(document).on('click', '.btn-remove', function() {
-    let id = $(this).data('id');
-
-    $.ajax({
-        url: '{{ route("cart.remove") }}',
-        method: 'POST',
-        data: {
-            _token: '{{ csrf_token() }}',
-            cart_id: id
-        },
-        success: function(response) {
-            if (response.success) {
-                localStorage.setItem('cartSuccessMessage', response.message);
-                location.reload();
-            } else {
+            },
+            error: function(xhr) {
                 Toastify({
-                    text: response.message,
+                    text: "Something went wrong!",
                     duration: 3000,
                     close: true,
                     gravity: "top",
@@ -367,23 +343,9 @@ $(document).on('click', '.btn-remove', function() {
                     backgroundColor: "#F44336",
                 }).showToast();
             }
-        },
-        error: function(xhr) {
-            Toastify({
-                text: "Something went wrong!",
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                backgroundColor: "#F44336",
-            }).showToast();
-        }
+        });
     });
-});   
-
-
-   
-</script>
+    </script>
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -1313,7 +1275,7 @@ $(document).on('click', '.btn-remove', function() {
         <div class="pt-5 pb-7 card border-0 h-100">
             <div class="d-flex align-items-center card-header border-0 py-0 pl-8 pr-7 mb-9 bg-transparent">
                 <a href="index.html" class="d-block w-179px">
-                Ecommerce
+                    Ecommerce
                 </a>
                 <span class="canvas-close d-inline-block text-right fs-24 ml-auto lh-1 text-primary"><i
                         class="fal fa-times"></i></span>
@@ -1342,8 +1304,8 @@ $(document).on('click', '.btn-remove', function() {
 
                     </li>
                     <li aria-haspopup="true" aria-expanded="false" class="nav-item dropdown py-1 px-0">
-                        <a class="nav-link  p-0" href="contact-us.html">
-                            Contact
+                        <a class="nav-link  p-0" href="http://127.0.0.1:8000/orders">
+                            All Oredes
                             <span class="caret"></span>
                         </a>
 
@@ -1669,4 +1631,3 @@ $(document).on('click', '.btn-remove', function() {
 </body>
 
 </html>
-
